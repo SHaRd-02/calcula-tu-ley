@@ -263,24 +263,27 @@ async function calcular(){
             <p  class="box callout ghost" >Primero cálcula tu sueldo neto para ver la comparación</p>
         {/if}
 
-        <div class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ocupación</th>
-                        <th>Salario Promedio Mensual</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {#each Object.entries(salariosPromedio) as [ocupacion, salario]}
-                        <tr class:selected={ocupacion === ocupacionSeleccionada}>
-                            <td>{ocupacion}</td>
-                            <td>{formatToPesos(salario)}</td>
+        <details>
+            <summary>Tabla de Salarios Promedios</summary>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ocupación</th>
+                            <th>Salario Promedio Mensual</th>
                         </tr>
-                    {/each}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {#each Object.entries(salariosPromedio) as [ocupacion, salario]}
+                            <tr class:selected={ocupacion === ocupacionSeleccionada}>
+                                <td>{ocupacion}</td>
+                                <td>{formatToPesos(salario)}</td>
+                            </tr>
+                        {/each}
+                    </tbody>
+                </table>
+            </div>
+        </details>
     </section>
 
     
@@ -302,30 +305,36 @@ async function calcular(){
             El ISR se calcula con base en tablas progresivas del SAT, donde se aplica una tasa dependiendo del rango de ingreso.
         </p>
 
-        <h3>📊 Tabla ISR Mensual 2025</h3>
-
-        <div class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Límite Inferior</th>
-                        <th>Límite Superior</th>
-                        <th>Cuota Fija</th>
-                        <th>%</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {#each ISR_TABLE_2025 as row}
-                        <tr>
-                            <td>{formatToPesos(row.limiteInferior)}</td>
-                            <td>{row.limiteSuperior === Infinity ? 'En adelante' : formatToPesos(row.limiteSuperior)}</td>
-                            <td>{formatToPesos(row.cuotaFija)}</td>
-                            <td>{row.porcentaje}%</td>
-                        </tr>
-                    {/each}
-                </tbody>
-            </table>
-        </div>
+        
+            <details>
+               
+                <summary>
+                    📊 Tabla ISR Mensual 2025
+                </summary>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Límite Inferior</th>
+                                <th>Límite Superior</th>
+                                <th>Cuota Fija</th>
+                                <th>%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {#each ISR_TABLE_2025 as row}
+                                <tr>
+                                    <td>{formatToPesos(row.limiteInferior)}</td>
+                                    <td>{row.limiteSuperior === Infinity ? 'En adelante' : formatToPesos(row.limiteSuperior)}</td>
+                                    <td>{formatToPesos(row.cuotaFija)}</td>
+                                    <td>{row.porcentaje}%</td>
+                                </tr>
+                            {/each}
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+            
 
         <h3>IMSS</h3>
         <p>
