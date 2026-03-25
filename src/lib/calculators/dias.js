@@ -35,3 +35,23 @@ export function calcularDiasTranscurridos(fechaIngreso, fechaSalida) {
     const diff = hoy - ultimoAniversario;
     return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
+
+export function calcularAniosTrabajados(fechaIngreso, fechaSalida) {
+    const hoy = new Date(fechaSalida);
+    const ingreso = new Date(fechaIngreso);
+
+    let anios = hoy.getFullYear() - ingreso.getFullYear();
+
+    const aniversarioEsteAnio = new Date(
+        hoy.getFullYear(),
+        ingreso.getMonth(),
+        ingreso.getDate()
+    );
+
+    // Si aún no cumple aniversario este año, restar 1
+    if (hoy < aniversarioEsteAnio) {
+        anios--;
+    }
+
+    return anios;
+}
