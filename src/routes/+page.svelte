@@ -8,7 +8,9 @@
 </script>
 
 <main class="gradient-surface">
-	<h1 class="gradient-text gradient-sunset">Calculadoras Laborales México</h1>
+	<h1 class="gradient-text gradient-sunset layout-readable">Calculadoras Laborales México</h1>
+
+
 
 	<section class="layout-card layout-readable center">
 		

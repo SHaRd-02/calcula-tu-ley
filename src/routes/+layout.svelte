@@ -10,7 +10,7 @@
 </svelte:head>
 
 <header class="header border sticky split">
-	<h6>🇲🇽 Finanzas MX</h6>
+	<h6>🇲🇽 Calcula tu Ley</h6>
 	<nav class="">
 		<ul class="no-list">
 			<li><a href="/">Inicio</a></li>
