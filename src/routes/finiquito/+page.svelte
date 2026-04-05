@@ -2,6 +2,7 @@
     import { calcularFiniquito } from "$lib/calculators/laboral";
     import { calcularDiasLaborados, calcularDiasTranscurridos, calcularAniosTrabajados } from "$lib/calculators/dias";
     import { formatToPesos } from "$lib/calculators/format";
+    import Chart from 'chart.js/auto';
 
     let salarioMensual;
     let fechaEntrada;
@@ -15,6 +16,7 @@
     let primaVacacional;
     let total;
     let canvas;
+    let chart;
 
 
     function getFiniquito() {
@@ -30,6 +32,39 @@
         primaVacacional = formatToPesos(finiquito?.primaVacacional);
         total = formatToPesos(finiquito?.total)
 
+        // Crear gráfica de dona
+        const data = [
+            finiquito?.aguinaldo || 0,
+            finiquito?.vacaciones || 0,
+            finiquito?.primaVacacional || 0
+        ];
+
+        const labels = ['Aguinaldo', 'Vacaciones', 'Prima Vacacional'];
+
+        // Destruir gráfica previa si existe
+        if (chart) {
+            chart.destroy();
+        }
+
+        chart = new Chart(canvas, {
+            type: 'doughnut',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        data
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
     }
 </script>
 
@@ -134,5 +169,9 @@
 
     .layout-readable{
         margin: 20px auto;
+    }
+
+    main{
+        padding: var(--pad-m);
     }
 </style>
