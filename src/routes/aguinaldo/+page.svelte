@@ -43,7 +43,7 @@
         Calcula tu Aguinaldo
     </h1>
     <section class="layout-readable layout-split">
-        <form class="stack" on:submit|preventDefault={getFiniquito} >
+        <form class="table  stack" on:submit|preventDefault={getFiniquito} >
         <!-- Salario Mensual -->
             <label for="salario-mensual">
                 Ingresa tu salario mensual bruto
@@ -202,5 +202,13 @@
 
     .layout-readable{
         margin: 20px auto;
+    }
+
+    .layout-split{
+        align-items: stretch;
+    }
+
+    form{
+        padding: var(--pad-m);
     }
 </style>
