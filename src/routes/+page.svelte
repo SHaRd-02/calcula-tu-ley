@@ -1,23 +1,30 @@
 <script>
 	const calculators = [
-		{ id: 'sueldo', title: 'Sueldo Bruto a Neto', desc: 'Calcula ISR, IMSS y subsidio.', img: "https://espaciohr.com/wp-content/uploads/2023/07/diferencia-entre-sueldo-y-salario-2.jpg" },
-		{ id: 'aguinaldo', title: 'Aguinaldo', desc: 'Mínimo 15 días proporcionales.', img: "https://revistafortuna.com.mx/wp-content/uploads/2023/12/VHCGHGSFSBDEBFKT5ZD2HRVN7I.jpg" },
-		{ id: 'finiquito', title: 'Finiquito', desc: 'Estimación por renuncia o despido.', img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OO3edgh26dS5O-kaM2xUnt70yhm-DpOpTw&s" },
-		{ id: 'minimo', title: 'Salario Mínimo', desc: 'Verifica si te pagan lo legal.', img: "https://cambiodemichoacan.com.mx/wp-content/uploads/2021/12/salario1.jpg" }
+		{ id: 'sueldo', title: 'Sueldo Bruto a Neto', desc: 'Calcula ISR, IMSS y subsidio.', img: "/salario.jpg" },
+		{ id: 'aguinaldo', title: 'Aguinaldo', desc: 'Mínimo 15 días proporcionales.', img: "/aguinaldo.jpg" },
+		{ id: 'finiquito', title: 'Finiquito', desc: 'Estimación por renuncia o despido.', img: "/finiquito.jpeg" },
+		{ id: 'minimo', title: 'Salario Mínimo', desc: 'Verifica si te pagan lo legal.', img: "/minimo.jpg" }
 	];
 </script>
 
 <main class="gradient-surface">
-	<h1 class="gradient-text gradient-sunset layout-readable">Calculadoras Laborales México</h1>
+	<h1 class="gradient-text gradient-sunset layout-readable">Calculadoras Laborales México 2026</h1>
 
-
+    <section class="layout-readable intro-text stack">
+        <p class="h5">
+            Herramientas gratuitas para que los trabajadores en México conozcan sus derechos y calculen sus percepciones de forma precisa.
+        </p>
+        <p>
+            En un entorno laboral complejo, entender cómo se compone tu salario y qué prestaciones te corresponden es fundamental. Nuestras calculadoras están actualizadas con las tablas de <strong>ISR 2026</strong> y el <strong>Salario Mínimo vigente</strong>, permitiéndote tomar decisiones informadas sobre tu carrera profesional.
+        </p>
+    </section>
 
 	<section class="layout-card layout-readable center">
 		
 		{#each calculators as calc}
 			<a class="card linked" href="/{calc.id}">
 				<figure>
-					<img src={calc?.img} alt="Image">
+					<img src={calc?.img} alt={calc?.title}>
 				</figure>
 				<header>
 					<h4>{calc?.title}</h4>
@@ -28,7 +35,34 @@
 			</a>
 		{/each}
 		
-		</section>
+	</section>
+
+    <section class="layout-readable stack content-section">
+        <h2>¿Por qué usar nuestras calculadoras laborales?</h2>
+        <p>
+            Muchos trabajadores desconocen la diferencia entre su <strong>sueldo bruto</strong> (antes de impuestos) y su <strong>sueldo neto</strong> (lo que realmente llega a su cuenta). Además, prestaciones como el aguinaldo o el cálculo de un finiquito pueden generar dudas.
+        </p>
+
+        <div class="grid-2">
+            <article class="box callout ghost">
+                <h3>Transparencia Salarial</h3>
+                <p>Calcula exactamente cuánto te debe retener el SAT por concepto de ISR y cuánto debes aportar al IMSS. Evita sorpresas en tu nómina.</p>
+            </article>
+            <article class="box callout ghost">
+                <h3>Derechos de Ley</h3>
+                <p>Asegúrate de que tu aguinaldo y finiquito se calculen conforme a la Ley Federal del Trabajo (LFT), garantizando tus 15 días mínimos de ley.</p>
+            </article>
+        </div>
+
+        <h3>Información Actualizada</h3>
+        <p>
+            Nuestras fórmulas se ajustan anualmente conforme a las publicaciones del Diario Oficial de la Federación (DOF). Esto incluye las nuevas tablas de retención de impuestos y los incrementos al salario mínimo en la Zona Libre de la Frontera Norte y el resto del país.
+        </p>
+        
+        <div class="box info-box">
+            <p><strong>Nota importante:</strong> Los resultados obtenidos son estimaciones. Te recomendamos consultar siempre con un profesional contable o legal para casos específicos.</p>
+        </div>
+    </section>
 </main>
 
 <style>
@@ -37,14 +71,45 @@
 		padding: var(--pad-xl);
 	}
 
+    .intro-text {
+        margin-top: 2rem;
+        line-height: 1.6;
+    }
+
+    .content-section {
+        margin-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .info-box {
+        background: rgba(0,0,0,0.05);
+        border-radius: 8px;
+        padding: 1.5rem;
+        font-style: italic;
+    }
+
 	figure{
 		height: 50%;
+        overflow: hidden;
 	}
 
 	img{
-		max-height: 100%;
+		object-fit: cover;
 		width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
 	}
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
 
 	section{
 		margin: var(--vs-xl) auto;

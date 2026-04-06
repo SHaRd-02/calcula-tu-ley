@@ -309,7 +309,7 @@ async function calcular(){
             <details>
                
                 <summary>
-                    📊 Tabla ISR Mensual 2025
+                    📊 Tabla ISR Mensual 2026
                 </summary>
                 <div class="table">
                     <table>
