@@ -132,18 +132,45 @@ async function calcular(){
             }
         }
     });
-}
+    }
 
+    const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Calculadora de Sueldo Neto 2026 México",
+    "operatingSystem": "Any",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MXN"
+    },
+    "description": "Calculadora gratuita para transformar sueldo bruto a neto en México considerando ISR e IMSS con tablas actualizadas de 2026."
+    };
+    </script>
 
-</script>
+    <svelte:head>
+    <title>Calculadora de Sueldo Neto 2026 México - ¿Cómo saber mi sueldo bruto?</title>
+    <meta name="description" content="Calcula cuánto ganarás después de impuestos (ISR e IMSS) en México. Descubre cuánto te queda libre con nuestra calculadora de sueldo neto 2026.">
+    <meta name="keywords" content="calculadora sueldo neto, sueldo bruto, calcular isr imss, sueldo neto mensual méxico, sueldo neto libre de impuestos">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadora de Sueldo Neto 2026 México - Gratis y Precisa">
+    <meta property="og:description" content="¿Cómo saber tu sueldo neto? Entra aquí y calcula cuánto te deben pagar después de impuestos.">
+    <meta property="og:image" content="https://calcula-tu-ley.vercel.app/salario.jpg">
 
-<main class="gradient-surface">
+    <script type="application/ld+json">
+        {JSON.stringify(schema)}
+    </script>
+    </svelte:head>
+
+    <main class="gradient-surface">
 
     <h1 class="layout-readable" >
-        Calcula tu sueldo Neto Mensual
+        Calculadora de Sueldo Neto 2026
     </h1>
-
+    <p class="layout-readable">Transforma tu sueldo bruto a neto fácilmente. Descubre cuánto te descuentan de ISR e IMSS cada mes.</p>
     <section class="layout-readable layout-split">
         
     

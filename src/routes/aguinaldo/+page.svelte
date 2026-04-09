@@ -8,7 +8,20 @@
     let diasLaborados;
     let aguinaldo = 0;
   
-   
+    // Structured Data for Google
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Calculadora de Aguinaldo 2026 México",
+        "operatingSystem": "Any",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "MXN"
+        },
+        "description": "Calculadora gratuita para determinar el aguinaldo proporcional en México basado en la Ley Federal del Trabajo."
+    };
 
 
     function getFiniquito() {
@@ -37,11 +50,28 @@
     }
 </script>
 
+<svelte:head>
+    <title>Calculadora de Aguinaldo 2026 México - ¿Cuánto te toca recibir?</title>
+    <meta name="description" content="Calcula tu aguinaldo 2026 en México de forma gratuita y precisa. Herramienta actualizada con la Ley Federal del Trabajo para cálculos anuales o proporcionales.">
+    <meta name="keywords" content="calculadora de aguinaldo, calcular aguinaldo, aguinaldo proporcional, ley federal del trabajo aguinaldo, finanzas méxico">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadora de Aguinaldo 2026 México - Gratis y Precisa">
+    <meta property="og:description" content="Descubre cuánto recibirás de aguinaldo este 2026 con nuestra calculadora fácil de usar.">
+    <meta property="og:image" content="https://calcula-tu-ley.vercel.app/aguinaldo.jpg">
+
+    <script type="application/ld+json">
+        {JSON.stringify(schema)}
+    </script>
+</svelte:head>
+
 
 <main class="gradient-surface stack" >
     <h1 class="layout-readable">
-        Calcula tu Aguinaldo
+        Calculadora de Aguinaldo 2026
     </h1>
+    <p class="layout-readable">Calcula cuánto te corresponde de aguinaldo en México según los días trabajados en el año.</p>
     <section class="layout-readable layout-split">
         <form class="table  stack" on:submit|preventDefault={getFiniquito} >
         <!-- Salario Mensual -->

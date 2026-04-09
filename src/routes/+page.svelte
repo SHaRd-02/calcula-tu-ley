@@ -5,11 +5,40 @@
 		{ id: 'finiquito', title: 'Finiquito', desc: 'Estimación por renuncia o despido.', img: "/finiquito.jpeg" },
 		{ id: 'minimo', title: 'Salario Mínimo', desc: 'Verifica si te pagan lo legal.', img: "/minimo.jpg" }
 	];
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Calcula tu Ley 2026",
+        "url": "https://calcula-tu-ley.vercel.app/",
+        "description": "Calculadoras laborales precisas para México: sueldo neto, aguinaldo, finiquito y salario mínimo 2026.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://calcula-tu-ley.vercel.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
 </script>
+
+<svelte:head>
+    <title>Calcula tu Ley 2026 | Calculadoras Laborales México - Sueldo, Aguinaldo y más</title>
+    <meta name="description" content="La mejor herramienta gratuita para trabajadores en México. Calcula tu sueldo neto, aguinaldo proporcional, finiquito y consulta el salario mínimo 2026 actualizado.">
+    <meta name="keywords" content="calculadoras laborales méxico, calcula tu ley, calcular sueldo neto 2026, calcular aguinaldo méxico, calcular finiquito gratis">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcula-tu-ley.vercel.app/">
+    <meta property="og:title" content="Calcula tu Ley 2026 - Herramientas Laborales Gratuitas">
+    <meta property="og:description" content="Calcula tus prestaciones de ley en México de forma fácil y precisa.">
+    <meta property="og:image" content="https://calcula-tu-ley.vercel.app/salario.jpg">
+
+    <script type="application/ld+json">
+        {JSON.stringify(schema)}
+    </script>
+</svelte:head>
 
 <main class="gradient-surface">
 	<h1 class="gradient-text gradient-sunset layout-readable">Calculadoras Laborales México 2026</h1>
-
     <section class="layout-readable intro-text stack">
         <p class="h5">
             Herramientas gratuitas para que los trabajadores en México conozcan sus derechos y calculen sus percepciones de forma precisa.

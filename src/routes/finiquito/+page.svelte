@@ -66,13 +66,44 @@
             }
         });
     }
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Calculadora de Finiquito México 2026",
+        "operatingSystem": "Any",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "MXN"
+        },
+        "description": "Calculadora de finiquito por renuncia o despido en México conforme a la Ley Federal del Trabajo."
+    };
 </script>
+
+<svelte:head>
+    <title>Calculadora de Finiquito México 2026 - ¿Cuánto te toca por renuncia?</title>
+    <meta name="description" content="Calcula tu finiquito laboral en México de forma gratuita. Incluye aguinaldo proporcional, vacaciones y prima vacacional según la Ley Federal del Trabajo.">
+    <meta name="keywords" content="calculadora finiquito, calcular finiquito méxico, finiquito por renuncia, ley federal del trabajo finiquito, finanzas méxico">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadora de Finiquito México 2026 - Gratis y Precisa">
+    <meta property="og:description" content="¿Vas a renunciar o te despidieron? Calcula cuánto te corresponde de finiquito con nuestra herramienta.">
+    <meta property="og:image" content="https://calcula-tu-ley.vercel.app/finiquito.jpeg">
+
+    <script type="application/ld+json">
+        {JSON.stringify(schema)}
+    </script>
+</svelte:head>
 
 
 <main class="gradient-surface stack" >
     <h1 class="layout-readable">
-        Calcula tu Finiquito Laboral
+        Calculadora de Finiquito Laboral 2026
     </h1>
+    <p class="layout-readable">Calcula cuánto te corresponde recibir al terminar tu relación laboral, ya sea por renuncia o término de contrato.</p>
     <section class="layout-readable layout-split">
         <form class="stack" on:submit|preventDefault={getFiniquito} >
         <!-- Salario Mensual -->

@@ -25,12 +25,42 @@
             ? 'Cumple con el salario mínimo ✅'
             : 'No cumple con el salario mínimo ⚠️'
         : '';
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Calculadora de Salario Mínimo México 2026",
+        "operatingSystem": "Any",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "MXN"
+        },
+        "description": "Verifica si tu sueldo cumple con el salario mínimo legal 2026 en México (Zona Frontera y Resto del País)."
+    };
 </script>
+
+<svelte:head>
+    <title>Salario Mínimo 2026 México - Calculadora y Tabla Actualizada</title>
+    <meta name="description" content="¿Cuánto es el salario mínimo en México este 2026? Verifica si tu sueldo cumple con la ley en la Zona Libre de la Frontera Norte y el resto del país.">
+    <meta name="keywords" content="salario mínimo 2026 méxico, conasami 2026, zona libre frontera norte, salario mínimo diario, finanzas méxico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Salario Mínimo 2026 México - ¿Cumple tu sueldo con la ley?">
+    <meta property="og:description" content="Consulta los nuevos montos del salario mínimo para 2026 y verifica tu nómina de forma gratuita.">
+    <meta property="og:image" content="https://calcula-tu-ley.vercel.app/minimo.jpg">
+
+    <script type="application/ld+json">
+        {JSON.stringify(schema)}
+    </script>
+</svelte:head>
+
 <main class="gradient-surface stack" >
     <h1 class="layout-readable">
         Calculadora de Salario Mínimo México 2026
     </h1>
-
     <section class="layout-readable stack">
         <p class="h5">
             Verifica si tu sueldo cumple con los estándares legales establecidos por la CONASAMI para el año 2026.

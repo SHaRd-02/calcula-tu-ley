@@ -21,7 +21,8 @@
 
 <svelte:head>
 	<title>Calcula tu Ley 2026 | Calculadoras Laborales México</title>
-    <meta name="description" content="Calcula tu sueldo neto, aguinaldo, finiquito y verifica el salario mínimo 2026 en México con Calcula tu Ley. Herramientas precisas y actualizadas.">
+    <meta name="description" content="Herramientas gratuitas para calcular sueldo neto, aguinaldo, finiquito y más en México. Datos actualizados 2026.">
+    <link rel="canonical" href="https://calcula-tu-ley.vercel.app/" />
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

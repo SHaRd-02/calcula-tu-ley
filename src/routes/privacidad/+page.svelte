@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Política de Privacidad | Calcula tu Ley - Finanzas México</title>
+    <meta name="description" content="Conoce cómo protegemos tu información y el uso de cookies en Calcula tu Ley. Tu privacidad es nuestra prioridad.">
+</svelte:head>
+
 <main class="gradient-surface">
     <article class="layout-readable stack content-section">
         <h1>Política de Privacidad</h1>

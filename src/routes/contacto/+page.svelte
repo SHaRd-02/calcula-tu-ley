@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Contacto | Calcula tu Ley - Calculadoras Laborales México</title>
+    <meta name="description" content="¿Tienes dudas sobre tu aguinaldo o sueldo? Contáctanos para sugerencias o reporte de errores en nuestras calculadoras laborales.">
+</svelte:head>
+
 <main class="gradient-surface">
     <article class="layout-readable stack content-section">
         <h1>Contacto</h1>
